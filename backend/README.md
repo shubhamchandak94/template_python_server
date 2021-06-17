@@ -1,15 +1,11 @@
 
 Prerequisites: 
 - Python 3 should be installed.
-- Add any dependencies beyond Flask to requirements.txt
-- 
+- Add any dependencies to requirements.txt (some already listed)
 
 Step 1: create virtual environments and install dependencies
 ```
-pip3
-```
-Step 2: create conda environment and install dependencies (Python 3.7+ recommended for Flask)
-```
+pip3 install -r virtualenv
 python3 -m venv backend_env
 source backend_env/bin/activate
 pip3 install -r requirements.txt
