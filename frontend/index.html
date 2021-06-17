@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Template frontend.
+    </title>
+  </head>
+  
+  <body style="text-align:center;" id="body">
+    <h1 style="color:green;" >
+        Template frontend version <span id="version"></span>
+    </h1>
+  
+    <div>
+        Enter string and start + end index (Python style indexing) and press submit 
+        for finding substring:<br/>
+        <textarea id="string" name="string">Shubham Chandak</textarea><br/>
+        Start index: <input type="text" id="start" value="0">
+        End index: <input type="text" id="end" value="7"><br/>
+        <button id="substrSubmit">Submit</button>
+    </div>
+    <!-- For printing result and/or error from server -->
+    <p id="result" style="color:green;"></p>
+    <p id="error_message" style="color:red;"></p>
+      
+  <!-- Include the JavaScript file -->
+  <script src="index.js" type="module"></script>
+  
+  </body>
+</html>
