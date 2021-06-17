@@ -5,7 +5,7 @@ Prerequisites:
 
 Step 1: create virtual environments and install dependencies
 ```
-pip3 install -r virtualenv
+pip3 install virtualenv
 python3 -m venv backend_env
 source backend_env/bin/activate
 pip3 install -r requirements.txt
