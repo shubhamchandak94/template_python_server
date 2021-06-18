@@ -50,13 +50,7 @@ Response is
 ```
 
 Step 5:
-Deploy using [uwsgi](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html#deploying-flask)
+Deploy using [Gunicorn](https://docs.gunicorn.org/en/latest/run.html)
 ```
-uwsgi --http-socket :5000 \
-      --plugin python3 \
-      --wsgi-file app.py \
-      --callable app \
-      -H backend_env \
-      --master \
-      --enable-threads
+gunicorn -w 4 -b :5000 app:app --log-level debug
 ```
