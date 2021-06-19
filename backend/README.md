@@ -112,7 +112,7 @@ You should now see a file named `app.sock` in this directory.
 
 Now we come to final step, configuring nginx to connect the web address to the socket.
 
-Update the `nginx-app` file with the correct path to the sock file and copy it to:
+Update the `nginx-config` file with the correct path to the sock file and copy it to:
 ```
 sudo cp nginx-config /etc/nginx/sites-available/app
 ```
