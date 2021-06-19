@@ -1,5 +1,6 @@
+This is a set up for the backend without Docker. We use Flask for setting up the GET/POST endpoint functionality, Gunicorn+nginx for deploying the server. I tested the Flask+Gunicorn on Mac and Linux, and the whole thing including nginx on a Google Cloud Compute Engine with Debian linux (with http enabled in firewall). Note that steps 2, 4 and 5 are three mutually exclusive ways of running the server, with 5 being the actual production-level deployment. 
 
-Prerequisites: 
+### Prerequisites
 - Git, Python 3 and pip should be installed (`sudo apt-get install git build-essential python3-pip`).
 - Add any dependencies to requirements.txt (some already listed)
 - If you want to use nginx, then it should be installed using on Linux as follows and the firewall should be set (based on [this page](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)):
@@ -23,7 +24,8 @@ Nginx HTTP                 ALLOW       Anywhere
 Nginx HTTP (v6)            ALLOW       Anywhere (v6)
 ```
 
-Step 1: create virtual environments and install dependencies (if the second command doesn't work, try `sudo apt install python3-venv`)
+### Step 1
+Create virtual environments and install dependencies (if the second command doesn't work, try `sudo apt install python3-venv`)
 ```
 pip3 install virtualenv
 python3 -m venv backend_env
@@ -31,7 +33,8 @@ source backend_env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-Step 3: run server as described in `app.py` on port 5000.
+### Step 2
+Run server as described in `app.py` on port 5000. This is mostly for testing and development, for deployment look further.
 ```
 export FLASK_APP=app
 flask run -p 5000
@@ -46,7 +49,8 @@ and replace `localhost` with the server address in step 4 (and in frontend).
 
 In addition you might need to change the firewall settings to accept traffic.
 
-Step 4: test with curl
+### Step 3
+Test with curl (you can also test with the frontend). Note that these steps remain the same for the deployment steps described below (except possibly changing the port and/or server address).
 
 GET
 ```
@@ -71,7 +75,7 @@ Response is
 {"substring":"Shubham"}
 ```
 
-Step 5:
+### Step 4
 Deploy using [Gunicorn](https://docs.gunicorn.org/en/latest/run.html)
 ```
 gunicorn --workers 4 --bind :5000 app:app --log-level debug
@@ -79,7 +83,7 @@ gunicorn --workers 4 --bind :5000 app:app --log-level debug
 
 You might need to change the firewall settings to accept traffic at the port.
 
-Step 6:
+### Step 5
 Deploy using [Gunicorn and nginx](https://faun.pub/deploy-flask-app-with-nginx-using-gunicorn-7fda4f50066a)
 
 Deactivate virtual environment:
