@@ -1,0 +1,8 @@
+server {
+    listen 80;
+
+location / {
+  include proxy_params;
+  proxy_pass http://unix:/home/shubhamchandak94/template_python_server/backend/app.sock;
+    }
+}
