@@ -41,6 +41,6 @@ def substring():
     except:
         return bad_request("Can't access end in request JSON.")
     
-    if not ((0 <= start < len(string)) and (0 <= end <= len(string))):
+    if not 0 <= start <= end <= len(string):
         return bad_request('Incorrect start and/or end index')
     return jsonify({'substring': string[start:end]})
