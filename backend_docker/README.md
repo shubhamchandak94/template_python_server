@@ -26,7 +26,7 @@ Response is
 {"version":"0.1"}
 ```
 POST
-
+```
 curl -X POST \
   http://35.192.143.7/substring \
   -H 'Cache-Control: no-cache' \
