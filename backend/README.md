@@ -54,7 +54,7 @@ Test with curl (you can also test with the frontend). Note that these steps rema
 
 GET
 ```
-curl localhost:5000/version
+curl http://localhost:5000/version
 ```
 Response is
 ```
@@ -64,7 +64,7 @@ Response is
 POST
 ```
 curl -X POST \
-  localhost:5000/substring \
+  http://localhost:5000/substring \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -d '{"string": "Shubham Chandak", "start": 0, "end": 7}'
