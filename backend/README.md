@@ -126,3 +126,7 @@ sudo systemctl restart nginx
 ```
 And you are ready to go! Note that the port is now 80 which need not be specified because it is the default http port.
 
+To stop the nginx server, just run
+```
+sudo systemctl stop nginx
+```
