@@ -1,6 +1,6 @@
 Running the server using docker based on the instructions [here](https://github.com/ivanpanshin/flask_gunicorn_nginx_docker) and [here](https://towardsdatascience.com/how-to-deploy-ml-models-using-flask-gunicorn-nginx-docker-9b32055b3d0). The actual backend Python code is in [`flask_app/app.py`](flask_app/app.py) and any additional requirements should be added to [`flask_app/requirements.txt`](flask_app/requirements.txt). You might also want to update the number of `worker_processes` in [`nginx/nginx.conf`](nginx/nginx.conf) and in the command in [`docker-compose.yml`](docker-compose.yml).
 
-I tested it on a Google Compute Engine (with http enabled in firewall).
+I tested it on a Google Compute Engine with Debian linux (with http enabled in firewall). In addition, I tested on my MacBook with localhost.
 
 Docker installation instructions follow:
 
